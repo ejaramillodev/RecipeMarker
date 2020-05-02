@@ -3,8 +3,8 @@ fun main(){
        
        val reponse = getMenuChoice()
        when (reponse) {
-            1 -> showIngredients()
-            2 -> println("Estas son tus recetas ")
+            1 -> makeRecipe()
+            2 -> println(viewRecipe())
             3 -> println("Chao ")
            else -> println("No esta en ninguno de los anteriores")
        }
@@ -24,8 +24,13 @@ fun getMenuChoice(): Int{
     return response
 }
 
-fun  showIngredients(){
+fun  makeRecipe(){
     val listadoIngredientes : List<String> = arrayListOf<String>("Agua","Leche","Carne","Verduras","Frutas","Cereal",
         "Huevos","Aceite")
-    println("Podemos hacer recetas con estos ingredientes ${listadoIngredientes.forEachIndexed { index, s -> println("$index. $s")  }}" )
+    println("Hacer receta \n Selecciona por categoría el ingrediente que buscas")
+    println(" ${listadoIngredientes.forEachIndexed { index, s -> println("$index. $s")  }}" )
+}
+
+fun viewRecipe():String{
+    return "Ver mis recetas"
 }
